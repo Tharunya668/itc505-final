@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-gap: 5px;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .is-off {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+  
+  <div id="board"></div>
+  <footer>
+    <h2>Addendum: Lights Out Game Development</h2>
+    <ul>
+   <li> <p1><b>Board Structure: </b>I chose a 5x5 grid for the game board. The grid layout is created using CSS Grid, providing a clean and organized structure.</li><p1>
+
+<li><p1><b>Square Styling:</b> Each square is styled using CSS to have a width and height of 50px, a white background, and a border. The .is-off class is applied to black squares, providing a visual indicator of their state.</li></p1>
+
+<li><p2><b>Random Initialization: </b>To ensure a solvable initial state, I employed a randomization strategy by simulating clicks on individual squares. This approach ensures that the board starts in a solvable configuration while allowing for variability in each game session.</li></p2>
+
+<li><p3><b>Event Handling:</b> Event listeners are used to handle square clicks. When a square is clicked, its state toggles, and the game checks for a win condition.</li></p3>
+
+<li><p4><b>Winning Popup:</b> Upon winning the game, a simple window.alert displays a "You win!" message. This provides a clear indication to the user that the puzzle has been successfully solved.</li></p4>
+
+<h3><b>Challenges and Solutions:</b></h3>
+
+<li><p5><b>Randomization for Solvability:</b> The main challenge was devising a method to randomize the board while maintaining solvability. The solution involved resetting the board and simulating random clicks until a solvable state was achieved.</li></p5>
+
+<li><p6><b>Inversion Counting:</b> Determining the solvability of the board required counting inversions. This involves counting the number of times a higher-numbered square precedes a lower-numbered square when considering the squares in a flattened layout. The game ensures an even number of inversions for solvability.</li></p6>
+
+<h4><b>Insights Gained:</b></h4>
+
+<li><p7><b>Simulation for Solvability:</b> Simulating clicks allowed for a controlled randomization process. By starting with an all-white board and toggling squares randomly, I ensured that the game would consistently produce solvable configurations.</li></p7>
+
+<li><p8><b>Event Dispatching: </b>The use of dispatchEvent to simulate clicks was a key insight. This approach allowed for a programmatic interaction with the squares, contributing to the randomization strategy.</li></p8>
+
+<li><p9><b>CSS Class Toggle:</b> Applying and removing the .is-off class provides a straightforward way to visually represent the state of each square. This approach enhances the user experience by clearly indicating which squares are active or "off."</li></p9>
+
+<b>In conclusion,</b> the Lights Out game development process involved thoughtful consideration of the board structure, styling, randomization for solvability, and event handling. Overcoming challenges related to solvability and gaining insights into simulation techniques contributed to the successful implementation of an engaging and interactive game.</p1>
+<script src="script.js"></script>
+</ul>
+</footer>
+
+
+</body>
+
+</html>
